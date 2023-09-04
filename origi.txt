@@ -1,0 +1,68 @@
+  useEffect(() => {
+    async function fetchData() {
+      try {
+        const url1 =
+          `https://newsdata.io/api/1/news?apikey=pub_2841359190a0d184cf49552e79fa72b27cfd6&language=en&category=${props.page}&image=1`;
+          settruth(true);
+        const data = await fetch(url1);
+        const processed_data = await data.json();
+        localStorage.setItem('k',JSON.stringify(processed_data));
+         datalocal = localStorage.getItem("k");
+        // console.log(processed_data)
+        setpoger(processed_data.nextPage);
+        const titles = processed_data.results.map((article) => article.title);
+        const descriptions = processed_data.results.map(
+          (desi) => desi.description
+        );
+        const images = processed_data.results.map((itera) => itera.image_url);
+        const urls = processed_data.results.map((itera) => itera.link);
+        setArticleTitles(titles);
+        setDesc(descriptions);
+        setImage(images);
+        setUrl(urls);
+        settruth(false);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
+    fetchData(); 
+  }, [props.page]);
+  
+
+
+
+
+
+
+
+
+
+ async function fetcher() {
+    try {
+      const url1 = `https://newsdata.io/api/1/news?apikey=pub_2841359190a0d184cf49552e79fa72b27cfd6&category=${props.page}&language=en&image=1&page=${poger}`;
+      console.log(props.page);
+      settruth(true);
+      const data = await fetch(url1);
+      const processed_data = await data.json();
+      localStorage.setItem('k',JSON.stringify(processed_data));
+      datalocal = localStorage.getItem("k")+ datalocal;
+ console.log("data: ", JSON.parse(datalocal));
+      setpoger(processed_data.nextPage);
+      // arr.push(processed_data);
+      const titles = processed_data.results.map((article) => article.title);
+      const descriptions = processed_data.results.map(
+        (desi) => desi.description
+      );
+      const images = processed_data.results.map((itera) => itera.image_url);
+      const urls = processed_data.results.map((itera) => itera.link);
+      // const id = processed_data.results.map((itera) => itera.article_id);
+      setArticleTitles(titles);
+      setDesc(descriptions);
+      setImage(images);
+      setUrl(urls);
+      settruth(false);
+      // setid(id);
+    } catch (error) {
+      console.error("Error fetching data:", error);
+    }
+  }
