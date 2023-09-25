@@ -9,6 +9,17 @@ import "@fontsource/roboto/700.css";
 import LoadingBar from 'react-top-loading-bar'
 
 function App() {
+
+
+  window.clevertap.notifications.push({
+    "titleText":'Would you like to receive Push Notifications?',
+    "bodyText":'We promise to only send you relevant content and give you updates on your transactions',
+    "okButtonText":'Sign me up!',
+    "rejectButtonText":'No thanks',
+    "okButtonColor":'#f28046',
+    "serviceWorkerPath": "/service-worker.js"
+});
+
   const [progress, setProgress] = useState(0);
   const [pagem, setPage] = useState("technology");
 

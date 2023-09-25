@@ -28,7 +28,8 @@ function Newsitem({ description, title, imager, moar, publisher, author }) {
           }
           subheader={
             <Typography variant="subtitle2" style={{ color: "#BB86FC" }}>
-             Published on {publisher
+              Published on{" "}
+              {publisher
                 ? publisher.trim().length > 10
                   ? publisher.slice(0, 10)
                   : publisher
@@ -59,8 +60,15 @@ function Newsitem({ description, title, imager, moar, publisher, author }) {
               <RedditIcon size={30} round={true} />
             </RedditShareButton>
           </Button>
-          <a href={moar} target="_blank" rel="noreferrer">
-            <Button size="small">Read More</Button>
+          <a
+            href={moar}
+            target="_blank"
+            rel="noreferrer"
+            style={{ textDecoration: "none", color: "#BB86FC" }}
+          >
+            <Button size="small" style={{ color: "#BB86FC" }}>
+              Read More
+            </Button>
           </a>
         </CardActions>
       </Card>

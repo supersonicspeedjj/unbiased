@@ -18,8 +18,11 @@ function Newscomp(props) {
   const [auth,setau]=useState([]);
   // const [results,setresult]=useState([]);
   const [vari,setvari]=useState(1);
+  // const scrollToTop = () => {
+  //   window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  // };
   useEffect(() => {
-    // eslint-disable-next-line 
+    
     async function fetchData() {
       try {
         const url1 = `https://newsdata.io/api/1/news?apikey=pub_2841359190a0d184cf49552e79fa72b27cfd6&language=en&category=${props.page}&image=1`;
@@ -55,6 +58,7 @@ function Newscomp(props) {
     }
   
     fetchData();
+    // eslint-disable-next-line 
   }, [props.page]);
   
 
@@ -86,48 +90,21 @@ function Newscomp(props) {
       setpub(publish.concat(publishes));
       setau(auth.concat(author));
       setvari(vari+1);
+      
+      
       props.changepro(90);
       props.changepro(100);
     } catch (error) {
       console.error("Error fetching data:", error);
     }
   }
-  // async function fetchMoreData (pageno){
-  //   try {
-      
-  //     const url1 = `https://newsdata.io/api/1/news?apikey=pub_2841359190a0d184cf49552e79fa72b27cfd6&category=${props.page}&language=en&image=1&page=${pageno}`;
-  //     console.log(props.page);
-  //     settruth(true);
-  //     const data = await fetch(url1);
-  //     const processed_data = await data.json();
-  //     console.log(processed_data)
-     
-  //     setpoger(processed_data.nextPage);
-  //     const titles = processed_data.results.map((article) => article.title);
-  //     const descriptions = processed_data.results.map((desi) => desi.description);
-  //     const images = processed_data.results.map((itera) => itera.image_url);
-  //     const urls = processed_data.results.map((itera) => itera.link);
-  //     const publishes=processed_data.results.map((itera)=>itera.pubDate);
-  //     const author=processed_data.results.map((itera)=>itera.source_id);
-  //     setresult(processed_data.totalResults	);
-  //     setArticleTitles(articleTitles.concat(titles));
-  //     setDesc(desc.concat(descriptions));
-  //     setImage(image.concat(images));
-  //     setUrl(url.concat(urls));
-  //     settruth(false);
-  //     setpub(publish.concat(publishes));
-  //     setau(auth.concat(author));
-  //     setvari(vari+1);
-  //   } catch (error) {
-  //     console.error("Error fetching data:", error);
-  //   }
-  // }
+  
   return (
     <div style={{ overflow: "hidden" }}>
       <h1
         style={{
           textAlign: "center",
-          marginTop: "20px",
+          marginTop: "100px",
           marginBottom: "30px",
           fontWeight: "bolder",
           fontFamily: "quicksand",
@@ -136,16 +113,7 @@ function Newscomp(props) {
       >
         UnBiased Headlines
       </h1>
-      {/* <InfiniteScroll
-    dataLength={results}
-    next={fetchMoreData}
-    style={{ display: 'flex', flexDirection: 'column-reverse',overflow:"hidden"}} //To put endMessage and loader to the top.
-    inverse={true} //
-    hasMore={true}
-    loader={<h4>Loading...</h4>}
-    scrollableTarget="scrollableDiv"
-   
-  > */}
+      
   <div style={{display:"flex",justifyContent:"center",alignContent:"center",marginTop:"20px",marginBottom:"20px"}}>{truth&&<CircularProgress style={{color:"white"}}/>}
   </div>
       <Grid

@@ -24,17 +24,19 @@ function ResponsiveAppBar(props) {
   const handleCloseNavMenu = () => {
     setAnchorElNav(null);
   };
-
+  const scrollToTop = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
+  };
 
   const jarod = (page) => {
     props.pgchange(page);
-
+    scrollToTop();
     console.log(page);
   };
 
 
   return (
-    <AppBar position="static">
+    <AppBar position="fixed">
       <Container maxWidth="xl" style={{ backgroundColor: "black" ,color:"#BB86FC"}}>
         <Toolbar disableGutters>
           <NewspaperIcon sx={{ display: { xs: "none", md: "flex" }, mr: 1 }} />
