@@ -7,7 +7,7 @@ import "@fontsource/roboto/400.css";
 import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import LoadingBar from 'react-top-loading-bar'
-
+import clevertap from 'clevertap-web-sdk';
 function App() {
 
 
