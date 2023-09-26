@@ -27,6 +27,7 @@ function Newscomp(props) {
     
     async function fetchData() {
       try {
+        clevertap.getAllInboxMessages() 
         clevertap.event.push("Product Viewed");
         const url1 = `https://newsdata.io/api/1/news?apikey=pub_2841359190a0d184cf49552e79fa72b27cfd6&language=en&category=${props.page}&image=1`;
         settruth(true);
