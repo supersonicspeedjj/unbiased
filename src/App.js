@@ -8,6 +8,7 @@ import "@fontsource/roboto/500.css";
 import "@fontsource/roboto/700.css";
 import LoadingBar from 'react-top-loading-bar'
 import clevertap from 'clevertap-web-sdk';
+import Form from "./components/Form";
 function App() {
 
 
@@ -51,6 +52,7 @@ function App() {
         progress={progress}
         onLoaderFinished={() => setProgress(0)}
       />
+      <Form></Form>
       <Newscomp page={pagem} changepro={changepro}></Newscomp>
     </>
   );
