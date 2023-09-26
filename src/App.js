@@ -54,7 +54,7 @@ function App() {
       />
       
       <Newscomp page={pagem} changepro={changepro}></Newscomp>
-      <Form></Form>
+      {/* <Form></Form> */}
     </>
   );
 }
