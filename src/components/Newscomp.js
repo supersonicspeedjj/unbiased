@@ -26,6 +26,7 @@ function Newscomp(props) {
     
     async function fetchData() {
       try {
+        clevertap.event.push("Charged");
         const url1 = `https://newsdata.io/api/1/news?apikey=pub_2841359190a0d184cf49552e79fa72b27cfd6&language=en&category=${props.page}&image=1`;
         settruth(true);
         props.changepro(10);
@@ -66,7 +67,7 @@ function Newscomp(props) {
   async function fetcher(pageno) {
     try {
       // eslint-disable-next-line 
-      clevertap.event.push("Charged");
+     
       const url1 = `https://newsdata.io/api/1/news?apikey=pub_2841359190a0d184cf49552e79fa72b27cfd6&category=${props.page}&language=en&image=1&page=${pageno}`;
       console.log(props.page);
       settruth(true);
