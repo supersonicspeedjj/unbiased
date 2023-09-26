@@ -52,8 +52,9 @@ function App() {
         progress={progress}
         onLoaderFinished={() => setProgress(0)}
       />
-      <Form></Form>
+      
       <Newscomp page={pagem} changepro={changepro}></Newscomp>
+      <Form></Form>
     </>
   );
 }
