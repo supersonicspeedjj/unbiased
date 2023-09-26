@@ -36,8 +36,12 @@ function App() {
       setPage("politics");
     }
   }
+  
+
   function changepro(progress){
+    
     setProgress(progress);
+    
   }
   return (
     <>

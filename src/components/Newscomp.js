@@ -6,6 +6,7 @@ import useMediaQuery from "@mui/material/useMediaQuery";
 import Button from "@mui/material/Button";
 import clevertap from "clevertap-web-sdk";
 import CircularProgress from '@mui/material/CircularProgress';
+
 // import InfiniteScroll from "react-infinite-scroll-component";
 function Newscomp(props) {
   const matches = useMediaQuery("(min-width:600px)");
@@ -54,6 +55,7 @@ function Newscomp(props) {
         setau(author);
         props.changepro(90);
         props.changepro(100);
+        console.log(clevertap.getAllInboxMessages())
       } catch (error) {
         console.error("Error fetching data:", error);
       }
@@ -116,7 +118,7 @@ function Newscomp(props) {
       >
         UnBiased Headlines
       </h1>
-      
+    
   <div style={{display:"flex",justifyContent:"center",alignContent:"center",marginTop:"20px",marginBottom:"20px"}}>{truth&&<CircularProgress style={{color:"white"}}/>}
   </div>
       <Grid

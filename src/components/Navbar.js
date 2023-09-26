@@ -100,6 +100,7 @@ function ResponsiveAppBar(props) {
               ))}
             </Menu>
           </Box>
+         
           <NewspaperIcon sx={{ display: { xs: "flex", md: "none" }, mr: 1 }} />
           <Typography
             variant="h5"
