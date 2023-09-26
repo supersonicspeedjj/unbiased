@@ -4,6 +4,7 @@ import { Grid } from "@mui/material";
 import useMediaQuery from "@mui/material/useMediaQuery";
 // import data from "./response.json";
 import Button from "@mui/material/Button";
+import clevertap from "clevertap-web-sdk";
 import CircularProgress from '@mui/material/CircularProgress';
 // import InfiniteScroll from "react-infinite-scroll-component";
 function Newscomp(props) {
@@ -65,6 +66,7 @@ function Newscomp(props) {
   async function fetcher(pageno) {
     try {
       // eslint-disable-next-line 
+      clevertap.event.push("Charged");
       const url1 = `https://newsdata.io/api/1/news?apikey=pub_2841359190a0d184cf49552e79fa72b27cfd6&category=${props.page}&language=en&image=1&page=${pageno}`;
       console.log(props.page);
       settruth(true);
