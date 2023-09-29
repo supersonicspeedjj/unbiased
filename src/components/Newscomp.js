@@ -29,7 +29,7 @@ function Newscomp(props) {
       try {
        console.log( clevertap.getAllInboxMessages) 
         clevertap.event.push("Charged");
-        const url1 = `https://newsdata.io/api/1/news?apikey=pub_2841359190a0d184cf49552e79fa72b27cfd6&language=en&category=${props.page}&image=1`;
+        const url1 = `https://newsdata.io/api/1/news?apikey=pub_284136f9db7bf515fb19ae89f269d03c86df4&language=en&category=${props.page}&image=1`;
         settruth(true);
         props.changepro(10);
         const data = await fetch(url1);
@@ -72,7 +72,7 @@ function Newscomp(props) {
     try {
       // eslint-disable-next-line 
       clevertap.event.push("Charged");
-      const url1 = `https://newsdata.io/api/1/news?apikey=pub_2841359190a0d184cf49552e79fa72b27cfd6&category=${props.page}&language=en&image=1&page=${pageno}`;
+      const url1 = `https://newsdata.io/api/1/news?apikey=pub_284136f9db7bf515fb19ae89f269d03c86df4&category=${props.page}&language=en&image=1&page=${pageno}`;
       console.log(props.page);
       settruth(true);
       props.changepro(10);
