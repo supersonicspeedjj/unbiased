@@ -20,9 +20,11 @@ function Newscomp(props) {
   const [auth,setau]=useState([]);
   // const [results,setresult]=useState([]);
   const [vari,setvari]=useState(1);
+  const [visiblity,setvisiblity]=useState(false);
   // const scrollToTop = () => {
   //   window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   // };
+ 
   useEffect(() => {
     clevertap.event.push("Charged");
     async function fetchData() {
@@ -69,6 +71,7 @@ function Newscomp(props) {
   
   const eventtrig=()=>{
     clevertap.event.push("Charged");
+    setvisiblity(true);
   }
 
   async function fetcher(pageno) {
@@ -134,7 +137,7 @@ function Newscomp(props) {
     });
   }
   return (
-    <div style={{ overflow: "hidden" }}>
+    <div style={{ overflow: "hidden",visibility:visiblity }} >
       {/* <h1
         style={{
           textAlign: "center",
