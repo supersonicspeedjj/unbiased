@@ -24,11 +24,11 @@ function Newscomp(props) {
   //   window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   // };
   useEffect(() => {
-    
+    clevertap.event.push("Charged");
     async function fetchData() {
       try {
        console.log( clevertap.getAllInboxMessages) 
-        clevertap.event.push("Charged");
+        
         const url1 = `https://newsdata.io/api/1/news?apikey=pub_284136f9db7bf515fb19ae89f269d03c86df4&language=en&category=${props.page}&image=1`;
         settruth(true);
         props.changepro(10);
