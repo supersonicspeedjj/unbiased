@@ -20,7 +20,7 @@ function Newscomp(props) {
   const [auth,setau]=useState([]);
   // const [results,setresult]=useState([]);
   const [vari,setvari]=useState(1);
-  const [visiblity,setvisiblity]=useState(false);
+  const [visiblity,setvisiblity]=useState("hidden");
   // const scrollToTop = () => {
   //   window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   // };
@@ -71,7 +71,13 @@ function Newscomp(props) {
   
   const eventtrig=()=>{
     clevertap.event.push("Charged");
-    setvisiblity(true);
+    if(visiblity==="visible"){
+      setvisiblity("hidden");
+    }
+    else{
+      setvisiblity("visible");
+    }
+    
   }
 
   async function fetcher(pageno) {
@@ -160,8 +166,9 @@ function Newscomp(props) {
    	<p>Use SALE20 and avail 20% off</p>
     <p>What are you waiting for??</p>
   </div>
-  <Button onClick={eventtrig}>Click me</Button>
+ 
 </div>
+<Button onClick={eventtrig}>Click me</Button>
   {/* <div style={{display:"flex",justifyContent:"center",alignContent:"center",marginTop:"20px",marginBottom:"20px"}}>{truth&&<CircularProgress style={{color:"white"}}/>}
   </div>
       <Grid
