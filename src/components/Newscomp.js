@@ -137,7 +137,7 @@ function Newscomp(props) {
     });
   }
   return (
-    <div style={{ overflow: "hidden",visibility:visiblity }} >
+    <div style={{ overflow: "hidden" }} >
       {/* <h1
         style={{
           textAlign: "center",
@@ -150,7 +150,7 @@ function Newscomp(props) {
       >
         UnBiased Headlines
       </h1> */}
-      <div id="container" style={{color:"white"}}>
+      <div id="container" style={{color:"white",visibility:visiblity}}>
 	<div class="close">&times;</div>
   <img src="https://img.freepik.com/free-photo/young-gowoman-yellow-leather-jacket-copy-space_23-2148674153.jpg?w=2000"/>
   <div class="message">
