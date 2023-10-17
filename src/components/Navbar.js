@@ -15,7 +15,7 @@ import NewspaperIcon from "@mui/icons-material/Newspaper";
 
 function ResponsiveAppBar(props) {
    const [anchorElNav, setAnchorElNav] = React.useState(null);
-   const pages = useMemo(() => ['sports', 'technology', 'politics'], []);
+   const pages = useMemo(() => ['sports', 'technology', 'politics','gaming'], []);
   const handleOpenNavMenu = (event) => {
     setAnchorElNav(event.currentTarget);
   };

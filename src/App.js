@@ -33,7 +33,9 @@ function App() {
       setPage("technology");
     } else if (page === "sports") {
       setPage("sports");
-    } else {
+    }else if (page === "gaming") {
+      setPage("gaming");}
+     else {
       setPage("politics");
     }
   }
