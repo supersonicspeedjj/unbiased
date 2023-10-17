@@ -20,6 +20,7 @@ function Newscomp(props) {
   const [auth,setau]=useState([]);
   // const [results,setresult]=useState([]);
   const [vari,setvari]=useState(1);
+  const [rerender, setRerender] = useState(false);
   const [visiblity,setvisiblity]=useState("hidden");
   // const scrollToTop = () => {
   //   window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
@@ -67,17 +68,17 @@ function Newscomp(props) {
   
     // fetchData();
     // eslint-disable-next-line 
-  }, [props.page]);
+  }, [props.page],[rerender]);
   
   const eventtrig=()=>{
     clevertap.event.push("Charged");
-    if(visiblity==="visible"){
-      setvisiblity("hidden");
-    }
-    else{
-      setvisiblity("visible");
-    }
-    
+    // if(visiblity==="visible"){
+    //   setvisiblity("hidden");
+    // }
+    // else{
+    //   setvisiblity("visible");
+    // }
+    setRerender(prevState => !prevState);
   }
 
   async function fetcher(pageno) {
