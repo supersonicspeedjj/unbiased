@@ -159,14 +159,14 @@ function Newscomp(props) {
       </h1> */}
      
       <div id="container">
-	{/* <div class="close">&times;</div> */}
-  {/* <img src="https://img.freepik.com/free-photo/young-gowoman-yellow-leather-jacket-copy-space_23-2148674153.jpg?w=2000"/> */}
+	<div class="close">&times;</div>
+  <img src="https://img.freepik.com/free-photo/young-gowoman-yellow-leather-jacket-copy-space_23-2148674153.jpg?w=2000"/>
 
   	
-   	{/* <p>Still thinking about the <span id="product-name">item</span> in your cart?</p>
+   	<p>Still thinking about the <span id="product-name">item</span> in your cart?</p>
     <p>We get it - it's fabulous.</p>
    	<p>Use SALE20 and avail 20% off</p>
-    <p>What are you waiting for??</p> */}
+    <p>What are you waiting for??</p>
 
  
 </div>
