@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import clevertap from 'clevertap-web-sdk';
 const root = ReactDOM.createRoot(document.getElementById('root'));
-clevertap.init('485-ZZW-596Z');
+clevertap.init('8R5-WKW-796Z');
 root.render(
   <React.StrictMode>
     <App />
