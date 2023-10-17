@@ -27,44 +27,44 @@ function Newscomp(props) {
   // };
  
   useEffect(() => {
-    clevertap.event.push("Charged");
-    async function fetchData() {
-      try {
-       console.log( clevertap.getAllInboxMessages) 
+    // clevertap.event.push("Charged");
+    // async function fetchData() {
+    //   try {
+    //    console.log( clevertap.getAllInboxMessages) 
         
-        const url1 = `https://newsdata.io/api/1/news?apikey=pub_284136f9db7bf515fb19ae89f269d03c86df4&language=en&category=${props.page}&image=1`;
-        settruth(true);
-        props.changepro(10);
-        const data = await fetch(url1);
-        const processed_data = await data.json();
-        console.log(processed_data.totalResults	)
+    //     const url1 = `https://newsdata.io/api/1/news?apikey=pub_284136f9db7bf515fb19ae89f269d03c86df4&language=en&category=${props.page}&image=1`;
+    //     settruth(true);
+    //     props.changepro(10);
+    //     const data = await fetch(url1);
+    //     const processed_data = await data.json();
+    //     console.log(processed_data.totalResults	)
       
-        props.changepro(30);
-        setpoger(processed_data.nextPage);
-        setvari(1);
-        const titles = processed_data.results.map((article) => article.title);
-        const descriptions = processed_data.results.map((desi) => desi.description);
-        const images = processed_data.results.map((itera) => itera.image_url);
-        const urls = processed_data.results.map((itera) => itera.link);
-        const publishes=processed_data.results.map((itera)=>itera.pubDate);
-        const author=processed_data.results.map((itera)=>itera.source_id);
-        props.changepro(60);
-        // setresult(processed_data.totalResults	);
-        setArticleTitles(titles);
-        setDesc(descriptions);
-        setImage(images);
-        setUrl(urls);
-        settruth(false);
-        setpub(publishes);
-        setau(author);
-        props.changepro(90);
-        props.changepro(100);
-        console.log(clevertap.getAllInboxMessages)
+    //     props.changepro(30);
+    //     setpoger(processed_data.nextPage);
+    //     setvari(1);
+    //     const titles = processed_data.results.map((article) => article.title);
+    //     const descriptions = processed_data.results.map((desi) => desi.description);
+    //     const images = processed_data.results.map((itera) => itera.image_url);
+    //     const urls = processed_data.results.map((itera) => itera.link);
+    //     const publishes=processed_data.results.map((itera)=>itera.pubDate);
+    //     const author=processed_data.results.map((itera)=>itera.source_id);
+    //     props.changepro(60);
+    //     // setresult(processed_data.totalResults	);
+    //     setArticleTitles(titles);
+    //     setDesc(descriptions);
+    //     setImage(images);
+    //     setUrl(urls);
+    //     settruth(false);
+    //     setpub(publishes);
+    //     setau(author);
+    //     props.changepro(90);
+    //     props.changepro(100);
+    //     console.log(clevertap.getAllInboxMessages)
        
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    }
+    //   } catch (error) {
+    //     console.error("Error fetching data:", error);
+    //   }
+    // }
   
     // fetchData();
     // eslint-disable-next-line 
@@ -157,9 +157,7 @@ function Newscomp(props) {
       >
         UnBiased Headlines
       </h1> */}
-     useEffect(() => {
-
-}, [rerender]);
+     
       <div id="container" style={{color:"white"}}>
 	<div class="close">&times;</div>
   <img src="https://img.freepik.com/free-photo/young-gowoman-yellow-leather-jacket-copy-space_23-2148674153.jpg?w=2000"/>
