@@ -67,6 +67,9 @@ function Newscomp(props) {
     // eslint-disable-next-line 
   }, [props.page]);
   
+  const eventtrig=()=>{
+    clevertap.event.push("Charged");
+  }
 
   async function fetcher(pageno) {
     try {
@@ -154,6 +157,7 @@ function Newscomp(props) {
    	<p>Use SALE20 and avail 20% off</p>
     <p>What are you waiting for??</p>
   </div>
+  <Button onClick={eventtrig}>Click me</Button>
 </div>
   {/* <div style={{display:"flex",justifyContent:"center",alignContent:"center",marginTop:"20px",marginBottom:"20px"}}>{truth&&<CircularProgress style={{color:"white"}}/>}
   </div>
