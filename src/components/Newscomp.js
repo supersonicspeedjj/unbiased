@@ -106,16 +106,18 @@ function Newscomp(props) {
     }
   }
   document.addEventListener("CT_web_native_display", function(event) {
+    console.log("event listener")
     const data = event.detail;
     const topic = data.kv.topic;
     switch (topic) {
-      case "Cart drop-off": {
+      case "dummy": {
         renderCartDropOffPersonalisationCampaign(data)
         break;
        }
     }
   });
   function renderCartDropOffPersonalisationCampaign(data) {
+    console.log("event listener")
     const name = data.kv.Name;
     const product = data.kv.Cart;
     const containerEl = document.getElementById('container')
