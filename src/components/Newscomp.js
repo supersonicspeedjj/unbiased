@@ -105,7 +105,29 @@ function Newscomp(props) {
       console.error("Error fetching data:", error);
     }
   }
-  
+  document.addEventListener("CT_web_native_display", function(event) {
+    const data = event.detail;
+    const topic = data.kv.topic;
+    switch (topic) {
+      case "Cart drop-off": {
+        renderCartDropOffPersonalisationCampaign(data)
+        break;
+       }
+    }
+  });
+  function renderCartDropOffPersonalisationCampaign(data) {
+    const name = data.kv.Name;
+    const product = data.kv.Cart;
+    const containerEl = document.getElementById('container')
+    const userNameEl = containerEl.getElementById('user-name')
+    userNameEl.innerText = name
+    const productNameEl = containerEl.getElementById('product-name')
+    productNameEl.innerText = product 
+    clevertap.renderNotificationViewed(data);
+    containerEl.addEventListener('click', () => {
+      clevertap.renderNotificationClicked(data)
+    });
+  }
   return (
     <div style={{ overflow: "hidden" }}>
       <h1
@@ -121,15 +143,8 @@ function Newscomp(props) {
         UnBiased Headlines
       </h1>
       <div id="container">
-	<div class="close">&times;</div>
-  <img src="https://img.freepik.com/free-photo/young-gowoman-yellow-leather-jacket-copy-space_23-2148674153.jpg?w=2000"/>
-  <div class="message">
-  	Hello <span id="user-name">user</span>,
-   	<p>Still thinking about the <span id="product-name">item</span> in your cart?</p>
-    <p>We get it - it's fabulous.</p>
-   	<p>Use SALE20 and avail 20% off</p>
-    <p>What are you waiting for??</p>
-  </div>
+	      
+  
 </div>
   <div style={{display:"flex",justifyContent:"center",alignContent:"center",marginTop:"20px",marginBottom:"20px"}}>{truth&&<CircularProgress style={{color:"white"}}/>}
   </div>
