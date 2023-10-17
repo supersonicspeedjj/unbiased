@@ -63,7 +63,7 @@ function Newscomp(props) {
       }
     }
   
-    fetchData();
+    // fetchData();
     // eslint-disable-next-line 
   }, [props.page]);
   
@@ -132,7 +132,7 @@ function Newscomp(props) {
   }
   return (
     <div style={{ overflow: "hidden" }}>
-      <h1
+      {/* <h1
         style={{
           textAlign: "center",
           marginTop: "100px",
@@ -143,7 +143,7 @@ function Newscomp(props) {
         }}
       >
         UnBiased Headlines
-      </h1>
+      </h1> */}
       <div id="container">
 	<div class="close">&times;</div>
   <img src="https://img.freepik.com/free-photo/young-gowoman-yellow-leather-jacket-copy-space_23-2148674153.jpg?w=2000"/>
@@ -155,7 +155,7 @@ function Newscomp(props) {
     <p>What are you waiting for??</p>
   </div>
 </div>
-  <div style={{display:"flex",justifyContent:"center",alignContent:"center",marginTop:"20px",marginBottom:"20px"}}>{truth&&<CircularProgress style={{color:"white"}}/>}
+  {/* <div style={{display:"flex",justifyContent:"center",alignContent:"center",marginTop:"20px",marginBottom:"20px"}}>{truth&&<CircularProgress style={{color:"white"}}/>}
   </div>
       <Grid
         container
@@ -204,7 +204,7 @@ function Newscomp(props) {
         Load More
         </Button>
         
-      </div>
+      </div> */}
     </div>
   );
 }
