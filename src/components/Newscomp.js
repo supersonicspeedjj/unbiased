@@ -120,7 +120,7 @@ function Newscomp(props) {
       >
         UnBiased Headlines
       </h1>
-      <div id="container">
+      <div id="container" style={{height:"600px",width:"100%"}}>
 	
 </div>
   <div style={{display:"flex",justifyContent:"center",alignContent:"center",marginTop:"20px",marginBottom:"20px"}}>{truth&&<CircularProgress style={{color:"white"}}/>}
