@@ -144,7 +144,7 @@ function Newscomp(props) {
       >
         UnBiased Headlines
       </h1> */}
-      <div id="container">
+      <div id="container" style={{color:"white"}}>
 	<div class="close">&times;</div>
   <img src="https://img.freepik.com/free-photo/young-gowoman-yellow-leather-jacket-copy-space_23-2148674153.jpg?w=2000"/>
   <div class="message">
