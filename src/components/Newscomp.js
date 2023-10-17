@@ -120,8 +120,16 @@ function Newscomp(props) {
       >
         UnBiased Headlines
       </h1>
-      <div id="container" style={{height:"600px",width:"100%"}}>
-	
+      <div id="container">
+	<div class="close">&times;</div>
+  <img src="https://img.freepik.com/free-photo/young-gowoman-yellow-leather-jacket-copy-space_23-2148674153.jpg?w=2000"/>
+  <div class="message">
+  	Hello <span id="user-name">user</span>,
+   	<p>Still thinking about the <span id="product-name">item</span> in your cart?</p>
+    <p>We get it - it's fabulous.</p>
+   	<p>Use SALE20 and avail 20% off</p>
+    <p>What are you waiting for??</p>
+  </div>
 </div>
   <div style={{display:"flex",justifyContent:"center",alignContent:"center",marginTop:"20px",marginBottom:"20px"}}>{truth&&<CircularProgress style={{color:"white"}}/>}
   </div>
