@@ -20,66 +20,53 @@ function Newscomp(props) {
   const [auth,setau]=useState([]);
   // const [results,setresult]=useState([]);
   const [vari,setvari]=useState(1);
-  const [rerender, setRerender] = useState(false);
-  const [visiblity,setvisiblity]=useState("hidden");
   // const scrollToTop = () => {
   //   window.scrollTo({ top: 0, left: 0, behavior: 'smooth' });
   // };
- 
   useEffect(() => {
-    // clevertap.event.push("Charged");
-    // async function fetchData() {
-    //   try {
-    //    console.log( clevertap.getAllInboxMessages) 
-        
-    //     const url1 = `https://newsdata.io/api/1/news?apikey=pub_284136f9db7bf515fb19ae89f269d03c86df4&language=en&category=${props.page}&image=1`;
-    //     settruth(true);
-    //     props.changepro(10);
-    //     const data = await fetch(url1);
-    //     const processed_data = await data.json();
-    //     console.log(processed_data.totalResults	)
+    
+    async function fetchData() {
+      try {
+       console.log( clevertap.getAllInboxMessages) 
+        clevertap.event.push("Charged");
+        const url1 = `https://newsdata.io/api/1/news?apikey=pub_284136f9db7bf515fb19ae89f269d03c86df4&language=en&category=${props.page}&image=1`;
+        settruth(true);
+        props.changepro(10);
+        const data = await fetch(url1);
+        const processed_data = await data.json();
+        console.log(processed_data.totalResults	)
       
-    //     props.changepro(30);
-    //     setpoger(processed_data.nextPage);
-    //     setvari(1);
-    //     const titles = processed_data.results.map((article) => article.title);
-    //     const descriptions = processed_data.results.map((desi) => desi.description);
-    //     const images = processed_data.results.map((itera) => itera.image_url);
-    //     const urls = processed_data.results.map((itera) => itera.link);
-    //     const publishes=processed_data.results.map((itera)=>itera.pubDate);
-    //     const author=processed_data.results.map((itera)=>itera.source_id);
-    //     props.changepro(60);
-    //     // setresult(processed_data.totalResults	);
-    //     setArticleTitles(titles);
-    //     setDesc(descriptions);
-    //     setImage(images);
-    //     setUrl(urls);
-    //     settruth(false);
-    //     setpub(publishes);
-    //     setau(author);
-    //     props.changepro(90);
-    //     props.changepro(100);
-    //     console.log(clevertap.getAllInboxMessages)
+        props.changepro(30);
+        setpoger(processed_data.nextPage);
+        setvari(1);
+        const titles = processed_data.results.map((article) => article.title);
+        const descriptions = processed_data.results.map((desi) => desi.description);
+        const images = processed_data.results.map((itera) => itera.image_url);
+        const urls = processed_data.results.map((itera) => itera.link);
+        const publishes=processed_data.results.map((itera)=>itera.pubDate);
+        const author=processed_data.results.map((itera)=>itera.source_id);
+        props.changepro(60);
+        // setresult(processed_data.totalResults	);
+        setArticleTitles(titles);
+        setDesc(descriptions);
+        setImage(images);
+        setUrl(urls);
+        settruth(false);
+        setpub(publishes);
+        setau(author);
+        props.changepro(90);
+        props.changepro(100);
+        console.log(clevertap.getAllInboxMessages)
        
-    //   } catch (error) {
-    //     console.error("Error fetching data:", error);
-    //   }
-    // }
+      } catch (error) {
+        console.error("Error fetching data:", error);
+      }
+    }
   
-    // fetchData();
+    fetchData();
     // eslint-disable-next-line 
-  }, [props.page],[rerender]);
+  }, [props.page]);
   
-  const eventtrig=()=>{
-    clevertap.event.push("Charged");
-    // if(visiblity==="visible"){
-    //   setvisiblity("hidden");
-    // }
-    // else{
-    //   setvisiblity("visible");
-    // }
-    setRerender(prevState => !prevState);
-  }
 
   async function fetcher(pageno) {
     try {
@@ -118,34 +105,10 @@ function Newscomp(props) {
       console.error("Error fetching data:", error);
     }
   }
-  document.addEventListener("CT_web_native_display", function(event) {
-    console.log("event listener")
-    const data = event.detail;
-    const topic = data.kv.topic;
-    switch (topic) {
-      case "dummy": {
-        renderCartDropOffPersonalisationCampaign(data)
-        break;
-       }
-    }
-  });
-  function renderCartDropOffPersonalisationCampaign(data) {
-    console.log("event listener")
-    const name = data.kv.Name;
-    const product = data.kv.Cart;
-    const containerEl = document.getElementById('container')
-    const userNameEl = containerEl.getElementById('user-name')
-    userNameEl.innerText = name
-    const productNameEl = containerEl.getElementById('product-name')
-    productNameEl.innerText = product 
-    clevertap.renderNotificationViewed(data);
-    containerEl.addEventListener('click', () => {
-      clevertap.renderNotificationClicked(data)
-    });
-  }
+  
   return (
-    <div style={{ overflow: "hidden" }} >
-      {/* <h1
+    <div style={{ overflow: "hidden" }}>
+      <h1
         style={{
           textAlign: "center",
           marginTop: "100px",
@@ -156,23 +119,9 @@ function Newscomp(props) {
         }}
       >
         UnBiased Headlines
-      </h1> */}
-     
-      <div id="container">
-	<div class="close">&times;</div>
-  <img src="https://img.freepik.com/free-photo/young-gowoman-yellow-leather-jacket-copy-space_23-2148674153.jpg?w=2000"/>
-
-  	
-   	<p>Still thinking about the <span id="product-name">item</span> in your cart?</p>
-    <p>We get it - it's fabulous.</p>
-   	<p>Use SALE20 and avail 20% off</p>
-    <p>What are you waiting for??</p>
-
- 
-</div>
- <span id="user-name" style={{color:"white"}}>{visiblity}</span>,
-<Button onClick={eventtrig}>Click me</Button>
-  {/* <div style={{display:"flex",justifyContent:"center",alignContent:"center",marginTop:"20px",marginBottom:"20px"}}>{truth&&<CircularProgress style={{color:"white"}}/>}
+      </h1>
+    
+  <div style={{display:"flex",justifyContent:"center",alignContent:"center",marginTop:"20px",marginBottom:"20px"}}>{truth&&<CircularProgress style={{color:"white"}}/>}
   </div>
       <Grid
         container
@@ -221,7 +170,7 @@ function Newscomp(props) {
         Load More
         </Button>
         
-      </div> */}
+      </div>
     </div>
   );
 }
